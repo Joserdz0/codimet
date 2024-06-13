@@ -69,13 +69,13 @@ const password = ref(null);
 const loading = ref(false);
 const error = ref("");
 const emailRules = [
-  value => {
+  (value) => {
     if (value) return true;
-    return 'DATO REQUERIDO';
+    return "DATO REQUERIDO";
   },
-  value => {
+  (value) => {
     if (/.+@.+\..+/.test(value)) return true;
-    return 'DEBE SER UN CORREO VÁLIDO';
+    return "DEBE SER UN CORREO VÁLIDO";
   },
 ];
 
@@ -100,10 +100,9 @@ const onSubmit = () => {
 
   fetch(
     `${
-      window.location.hostname ==
-      window.location.protocol + window.location.hostname
-        ? window.location.origin
-        : "http://localhost:8000"
+      window.location.hostname != window.location.host
+        ? "http://localhost:8000"
+        : window.location.origin
     }/initsession.php`,
     requestOptions
   )
@@ -122,7 +121,9 @@ const onSubmit = () => {
     .catch((error) => console.error(error));
 };
 
-const required = [(v) => {
-  return !!v || "DATO REQUERIDO";
-}];
+const required = [
+  (v) => {
+    return !!v || "DATO REQUERIDO";
+  },
+];
 </script>

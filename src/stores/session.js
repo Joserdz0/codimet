@@ -22,10 +22,10 @@ export const useSessionStore = defineStore("session", {
 
       const response = await fetch(
         `${
-          window.location.hostname ==
-          window.location.protocol + window.location.hostname
-            ? window.location.origin
-            : "http://localhost:8000"
+          window.location.hostname !=
+          window.location.host
+            ? 'http://localhost:8000' 
+            : window.location.origin 
         }/checksession.php`,
         requestOptions
       );
@@ -39,7 +39,7 @@ export const useSessionStore = defineStore("session", {
       }
     },
 
-    async setSessionCompany(company_id,company_name,company_image) {
+    async setSessionCompany(company_id, company_name, company_image) {
       this.session.company_id = company_id;
       this.session.company_name = company_name;
       this.session.company_image = company_image;
@@ -52,13 +52,20 @@ export const useSessionStore = defineStore("session", {
         body: formdata,
         redirect: "follow",
         credentials: "include", //solo en local
-
       };
-      const response = await fetch("http://localhost:8000/updatedatasession.php", requestOptions)
+      const response = await fetch(
+        `${
+          window.location.hostname !=
+          window.location.host
+            ? 'http://localhost:8000' 
+            : window.location.origin 
+        }/updatedatasession.php`,
+        requestOptions
+      );
       const data = await response.json();
       return data;
     },
-    async setSessionRole(role_id,role_name) {
+    async setSessionRole(role_id, role_name) {
       this.session.role_id = role_id;
       this.session.role_name = role_name;
       const myHeaders = new Headers();
@@ -70,9 +77,16 @@ export const useSessionStore = defineStore("session", {
         body: formdata,
         redirect: "follow",
         credentials: "include", //solo en local
-
       };
-      const response = await fetch("http://localhost:8000/updatedatasession.php", requestOptions)
+      const response = await fetch(
+        `${
+          window.location.hostname !=
+          window.location.host
+            ? 'http://localhost:8000' 
+            : window.location.origin 
+        }/updatedatasession.php`,
+        requestOptions
+      );
       const data = await response.json();
       return data;
     },
