@@ -1,5 +1,4 @@
 <template>
-  <Navigation/>
   <p>menu = {{ opcion }}</p>
   <BottomNavigation v-model="opcion" :opciones="['Listar','Crear']" />
 </template>

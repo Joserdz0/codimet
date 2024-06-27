@@ -1,0 +1,8 @@
+------------------------------------------------------
+COSAS EXTRA DEL SISTEMA QUE SE DEBEN DE HACER PARA QUE SEA UN SISTEMA COMPLETO 
+NOTA: Actualmente 25 de junio del 2024 no se tienen pero se hizo de tal manera que cuando se añada no efecte al comportamiento actual 
+------------------------------------------------------
+-se debe de meter a api los session php
+-los articulos deben de tener imagen 
+-Se deben de manejar las rutas dependiendo del usuario
+-se debe arreglar el menu de editar crear, etc 
