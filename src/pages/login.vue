@@ -101,7 +101,7 @@ const onSubmit = () => {
   fetch(
     `${
       window.location.hostname != window.location.host
-        ? "http://localhost:8000"
+        ? "http://localhost/codimet/public/"
         : window.location.origin
     }/initsession.php`,
     requestOptions

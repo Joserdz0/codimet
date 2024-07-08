@@ -24,7 +24,7 @@ export const useSessionStore = defineStore("session", {
         `${
           window.location.hostname !=
           window.location.host
-            ? 'http://localhost:8000' 
+            ? 'http://localhost/codimet/public/' 
             : window.location.origin 
         }/checksession.php`,
         requestOptions
@@ -57,7 +57,7 @@ export const useSessionStore = defineStore("session", {
         `${
           window.location.hostname !=
           window.location.host
-            ? 'http://localhost:8000' 
+            ? 'http://localhost/codimet/public/' 
             : window.location.origin 
         }/updatedatasession.php`,
         requestOptions
@@ -82,7 +82,7 @@ export const useSessionStore = defineStore("session", {
         `${
           window.location.hostname !=
           window.location.host
-            ? 'http://localhost:8000' 
+            ? 'http://localhost/codimet/public/' 
             : window.location.origin 
         }/updatedatasession.php`,
         requestOptions

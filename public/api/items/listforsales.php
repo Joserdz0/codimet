@@ -9,6 +9,7 @@ if (isset($_SESSION['name'])) {
             FROM items
     
             WHERE items.company_id = ?
+            AND items.quantity > 0
             AND items.status = 1';
     $results = R::getAll($sql, [$_SESSION['company_id']]);
     

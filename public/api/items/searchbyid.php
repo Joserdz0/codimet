@@ -8,9 +8,9 @@ if (isset($_SESSION['name'])) {
     $sql = 'SELECT items.id as item_id, items.name as item_name, items.price as item_price,  items.quantity as item_quantity, items.status as item_status
             FROM items
     
-            WHERE items.company_id = ?
+            WHERE items.id = ?
             AND items.status = 1';
-    $results = R::getAll($sql, [$_SESSION['company_id']]);
+    $results = R::getAll($sql, [$_GET['id']]);
     
     //traemos todos los registros de la tabla user_has_roles
     echo json_encode(['status' => 1,'message' => 'SESION ACTIVA' , 'data' => $results ]);
